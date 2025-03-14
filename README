@@ -1,0 +1,28 @@
+/ TEMA 2 /
+
+Toate functiile se afla in fisierul func.c.
+	
+	Structuri folosite:
+
+TArb: reprezinta arborele cuaternal din cerinta (fiecare nod pointeaza la 4 fii), fiecare nod avand drept informatii tipul_nodului (0 sau 1) culorile RGB si pointeri catre fii sai.
+
+Pixel: o structura folosita pentru matricea de pixeli, are drept informatii culorile RGB
+
+TCoada: o coada obisnuita care are la baza o lista simplu inlantuita
+
+	Pentru cerintele 1 si 2, incep prin a citi intr-o matrice valorile culorilor din fiecare pixel al imaginii, dupa care formez arborele de compresie. Acesta este format prin verificarea mediei culorilor dintr-o anumita zona (de lungime "size"). Daca media este mai mica sau egala decat factorul de compresie, putem introduce in arbore un nod frunza care are culoarea respectiva. Altfel, generam cei 4 fii pentru nodul respectiv si apelam recursiv functia.
+
+	Cerinta 1:
+
+Dupa generarea arborelui cuaternal, afisez mai intai numarul de nivele, apoi numarul de frunze, iar pentru lungimea celei mai mare zone, aceasta este egala cu lungimea imaginii impartita la 2 la puterea nivelului pe care se gaseste prima frunza.
+
+	Cerinta 2:
+	
+Parcurgerea pe nivele a arborelui se realizeaza cu ajutorul unei cozi, care pentru fiecare nod extras, se introduc si fiii acestuia. Informatiile sunt apoi scrise corespunzator in fisierul de iesire.
+
+	Cerinta 3:
+	
+Pentru generarea arborelui de comprimare, plecand de la fisierul de intrare, am folosit o coada care retine toate nodurile care inca nu si-au primit cei patru fii (avand in vedere ca in fisierul comprimat se afla o reprezentare a arborelui pe nivele, dupa primul nod, urmatoarele seturi a cate 4 noduri reprezinta fii ultimului nod "tata" care inca nu are fii). Apoi, formam matricea de pixeli, dupa care printam informatiile din acaeasta matrice in fisierul de iesire. (respectand formatul fisierului de tip .ppm)
+
+
+ 
